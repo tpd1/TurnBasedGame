@@ -12,15 +12,10 @@ public class MouseWorld : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
-    {
-        transform.position = MouseWorld.GetPosition();
-    }
-
     public static Vector3 GetPosition()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //returns true if hits collider.
-        Debug.Log(Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, instance.mouseLayerMask));
+        Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, instance.mouseLayerMask);
         return raycastHit.point;
     }
 }
