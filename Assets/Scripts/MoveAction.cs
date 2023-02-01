@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveAction : MonoBehaviour
 {
     [SerializeField] private Animator unitAnimator;
-    private int maxMoveDistance = 1;
+    private int maxMoveDistance = 4;
     private Vector3 targetPosition;
     private Unit unit;
 
